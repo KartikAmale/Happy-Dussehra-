@@ -6,9 +6,10 @@
     <title>Bootstrap demo</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
 
     <style>
+      
         .gallery-item img {
             transition: transform 0.3s ease;
         }
@@ -17,56 +18,8 @@
             transform: scale(1.05);
         }
 
-        .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .autoplay-progress {
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-      z-index: 10;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: var(--swiper-theme-color);
-    }
-
-    .autoplay-progress svg {
-      --progress: 0;
-      position: absolute;
-      left: 0;
-      top: 0px;
-      z-index: 10;
-      width: 100%;
-      height: 100%;
-      stroke-width: 4px;
-      stroke: var(--swiper-theme-color);
-      fill: none;
-      stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
-      stroke-dasharray: 125.6;
-      transform: rotate(-90deg);
-    }
+      
+       
     </style>
   </head>
   <body>
@@ -82,7 +35,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto gap-5">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto ">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#home">Home</a>
               </li>
@@ -103,27 +56,7 @@
         </div>
       </nav>
 
-
-      <div class="swiper mySwiper" id="home">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="https://img.freepik.com/free-vector/happy-dussehra-traditional-golden-banner-design_1017-33999.jpg?ga=GA1.1.298716085.1706261569&semt=ais_hybrid-rr-similar" class="d-block w-100" style="height: 400px;" alt="..."></div>
-          <div class="swiper-slide"><img src="https://img.freepik.com/premium-vector/happy-dussehra-navratri-poster-design-vector-illustration-festival-india-hindu-holiday_354831-1046.jpg?w=1380" class="d-block w-100" style="height: 400px;" alt="..."></div>
-         <div class="swiper-slide"><img src="https://img.freepik.com/free-vector/indian-happy-dussehra-festival-celebration-banner-with-bow-arrow-vector_1017-28208.jpg?ga=GA1.1.298716085.1706261569&semt=ais_hybrid-rr-similar" class="d-block w-100" style="height: 400px;" alt="..."></div>
-             
-            
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-        <div class="autoplay-progress">
-          <svg viewBox="0 0 48 48">
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span></span>
-        </div>
-      </div>
-
-      <!-- <section id="home">
+      <section id="home">
 
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
@@ -147,7 +80,7 @@
             </button>
           </div>
 
-      </section> -->
+      </section>
 
       <div class="container" id="about">
 
@@ -265,33 +198,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
    
-   <script>
-      const progressCircle = document.querySelector(".autoplay-progress svg");
-    const progressContent = document.querySelector(".autoplay-progress span");
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      on: {
-        autoplayTimeLeft(s, time, progress) {
-          progressCircle.style.setProperty("--progress", 1 - progress);
-          progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-        }
-      }
-    });
-    </script>
+  
   </body>
 </html>
